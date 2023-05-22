@@ -192,7 +192,27 @@ public float average() {
     return sum / count;
 }
 
-//pares
+//Stack merger Combina 2 pilas 
+public class StackMerger {
+    public static Stack merge(Stack stack1, Stack stack2) {
+        Stack mergedStack = new Stack();
+        while (!stack1.isEmpty() && !stack2.isEmpty()) {
+            if (stack1.peek() > stack2.peek()) {
+                mergedStack.push(stack1.pop());
+            } else {
+                mergedStack.push(stack2.pop());
+            }
+        }
+        while (!stack1.isEmpty()) {
+            mergedStack.push(stack1.pop());
+        }
+        while (!stack2.isEmpty()) {
+            mergedStack.push(stack2.pop());
+        }
+        return mergedStack;
+    }
+}
+
 
 
 
